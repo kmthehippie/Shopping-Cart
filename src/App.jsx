@@ -1,21 +1,50 @@
-import { useState } from 'react'
+import { createBrowserRouter,
+RouterProvider } from 'react-router-dom'
 
 import './App.css'
 
+
+
+//pages
+import Home from './pages/Home'
+import About from './pages/About'
+import Contact from './pages/Contact'
+// import { loader as fruitsLoader } from './pages/Sidebar'
+
+//layouts
+import RootLayout from './layouts/RootLayout'
+import ProductLayout from './layouts/ProductLayout'
+
+const router = createBrowserRouter([
+{
+  path: "/",
+  element: <RootLayout />,
+  children: [
+    {
+      path: "/",
+      element: <Home />
+    },
+    {
+      path: "about",
+      element: <About />
+    },
+    {
+      path: "contact",
+      element: <Contact />
+    },
+    {
+      path: "products",
+      element: <ProductLayout />,
+      // errorElement: <></>,
+    }
+  ]
+},
+])
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
-    <>
-      <h1>React Setup</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-  
-      </div>
-      
-    </>
+   <RouterProvider router = {router} />
   )
 }
 
