@@ -10,7 +10,7 @@ function Home() {
         <div className="mini-box">
         <div className="title">
             <h1>Welcome to <br/>
-                Fruits are Us</h1>
+                Shop Till You Drop</h1>
         </div>
         <div className="shop-now-div">
             <NavLink to="/" className="shop-btn">Shop Now!</NavLink>

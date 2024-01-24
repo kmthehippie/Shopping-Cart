@@ -4,9 +4,9 @@ import "../styles/rootlayout.scss"
 
 function RootLayout() {
   return (
-    <div className="header">
+    <>
         <nav>
-        <h1>Fruits Are Us</h1>
+        <h1>Shop till you Drop</h1>
         <NavLink to="/">Home</NavLink>
         <NavLink to="products">Products</NavLink>
         <NavLink to="about">About Us</NavLink>
@@ -17,7 +17,7 @@ function RootLayout() {
         <main>
         <Outlet />
         </main>
-    </div>
+    </>
   )
 }
 

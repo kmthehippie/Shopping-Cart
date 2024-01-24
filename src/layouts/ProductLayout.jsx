@@ -1,17 +1,23 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { NavLink, Outlet } from 'react-router-dom'
+import Sidebar from '../products/Sidebar'
+import "../styles/productlayout.scss"
+import AllProducts from '../products/AllProducts'
 
-import { NavLink } from 'react-router-dom'
-import Sidebar from '../pages/Sidebar'
-
-function ProductLayout() {
+export default function ProductLayout() {
+  
   return (
-<>
-<h1>This is products</h1>
-<Sidebar />
+    <>
+    <div className = "product-body">
+
+      <Sidebar />
+      <div className="product-listing">
+      <Outlet />
+      </div>
 {/* Sidebar first */}
 {/* products layout. multiple in one page. */}
-</>  
+    </div>  
+    </>
 )
 }
 
-export default ProductLayout

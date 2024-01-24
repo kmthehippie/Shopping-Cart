@@ -1,0 +1,16 @@
+label {
+  position: absolute;
+  color: white;
+  top: -1.8rem;
+}
+
+input {
+  width: 21rem;
+  padding: 0.5rem;
+}
+
+div {
+  position: relative;
+  margin: 1rem;
+  margin-top: 2rem;
+}/*# sourceMappingURL=contact.css.map */
