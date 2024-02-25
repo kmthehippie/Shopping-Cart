@@ -1,33 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Products from '../FetchData'
 import { useParams } from 'react-router-dom'
+import "../styles/productdetail.scss"
+import SingleProduct from './SingleProduct'
 
 
 function ProductDetail() {
-  const data = [...Products()]
-  const { productId } = useParams()
-  const idData = data.filter(checkId)
+  const params = useParams()
+  const id = params.productId
+  const data = Products()
   function checkId(data){    
-    return dasdata.id === Number(productId)
+    return data.id === Number(id)
   }
 
+  
   return (
-    <div>
-      Product Detail
-      { JSON.stringify(idData) }
-      <div className="prod-img-div">
-        <img src={idData.image} />
-      </div>
-      <div className="prod-desc">
-        <h2>{idData.title}</h2>
-        <p><i>{idData.price}</i></p>
-        <button>Add To Cart</button>
-      </div>
-      <div className="accordion">
-        <Accordion description={idData.description} />
-      </div>
+    <>
+    <div className='single-product'>
+    {
+      data.filter(checkId).map(item =>
+        
+        <SingleProduct props={item} key={item.id}/>
+        )
+    }
+
     </div>
+    </>
+    
+
   )
+
 }
 
 export default ProductDetail

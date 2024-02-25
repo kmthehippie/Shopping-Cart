@@ -10,11 +10,11 @@ export default function Products() {
       .catch ((error)=>console.error(error))
     }, [])
     
-    const products = data.map( item => <li> { JSON.stringify(item)} </li>)
+    // const products = data.map( item => <li> { JSON.stringify(item)} </li>)
     const categories = [...new Set (data.map( item => item.category))]
-    const category =  categories.map(category =>
-      <li><NavLink to={category.split(' ')[0].replace("'s", "")}>{category}</NavLink></li>
-      )
+    // const category =  categories.map(category =>
+    //   <li><NavLink to={category.split(' ')[0].replace("'s", "")}>{category}</NavLink></li>
+    //   )
 
     return data
 }

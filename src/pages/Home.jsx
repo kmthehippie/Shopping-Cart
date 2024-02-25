@@ -7,20 +7,15 @@ function Home() {
   return (
     <>
     <div className="hero-bg">
-        <div className="mini-box">
-        <div className="title">
-            <h1>Welcome to <br/>
-                Shop Till You Drop</h1>
-        </div>
-        <div className="shop-now-div">
-            <NavLink to="/" className="shop-btn">Shop Now!</NavLink>
-        </div>
-        </div>
-        
+       <img src="https://images.pexels.com/photos/3345882/pexels-photo-3345882.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
+         <div className="shop-now-div">
+            <NavLink to="/app/products" className="shop-btn">Shop</NavLink>
     </div>
-    <div className="reviews">
-        
     </div>
+   
+        
+       
+   
     </>
   )
 }

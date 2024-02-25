@@ -1,25 +1,25 @@
 import { createBrowserRouter,
 RouterProvider } from 'react-router-dom'
 
-import './App.css'
-
-
 
 //pages
 import Home from './pages/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'
-import Men from "./products/Men"
-import Jewelery from "./products/Jewelery"
-import Electronics from "./products/Electronics"
-import Women from "./products/Women"
-import ProductDetail from './products/ProductDetail'
+import ProductCart from './pages/ProductCart'
+import ErrorPage from './pages/ErrorPage'
 
+//products-filtered pages
+import ProductDetail from './products/ProductDetail'
+import DisplayProducts from './products/DisplayProducts'
+
+//cart modal
+import CartModal from './shopping-cart/CartModal'
 
 //layouts
 import RootLayout from './layouts/RootLayout'
 import ProductLayout from './layouts/ProductLayout'
-import AllProducts from './products/AllProducts'
+
 
 
 
@@ -27,6 +27,7 @@ const router = createBrowserRouter([
 {
   path: "/",
   element: <RootLayout />,
+  errorElement: <ErrorPage />,
   children: [
     {
       path: "/",
@@ -41,37 +42,35 @@ const router = createBrowserRouter([
       element: <Contact />
     },
     {
-      path: "products",
-      element: <ProductLayout />,
+      path: "app",
+      element: <ProductCart />,
       children: [
         {
-          index: true,
-          element: <AllProducts />
+          path: "cart",
+          element: <CartModal />
         },
         {
-          path: "men",
-          element: <Men />
+          path: "products",
+          element: <ProductLayout />,
+          children: [
+            {
+              index: true,
+              element: <DisplayProducts  />,
+            },
+            {
+              path: "product/:productId",
+              element: <ProductDetail />
+            },
+            
+          ],
+          //loader?
+          // errorElement: <></>,
         },
-        {
-          path: "women",
-          element: <Women />,
-        },
-        {
-          path: "jewelery",
-          element: <Jewelery />
-        },
-        {
-          path: "electronics",
-          element: <Electronics />
-        },
-        {
-          path: "product/:productId",
-          element: <ProductDetail />
-        }
-      ],
-      //loader?
-      // errorElement: <></>,
-    },
+        
+        
+      ]
+    }
+    
     
   ]
 },
