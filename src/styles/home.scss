@@ -39,3 +39,15 @@ main{
     font-size: 1rem;
     color: rgb(211, 211, 211);
 }
+
+.about{
+    display: flex;
+    flex-direction: column;
+}
+
+.about h3{
+    font-family: "Oswald";
+    font-size: 2rem;
+    margin-top: 3rem;
+}
+
