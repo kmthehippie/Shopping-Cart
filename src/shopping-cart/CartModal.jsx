@@ -15,7 +15,7 @@ function CartModal() {
   }
   
 
-  const { removeItem, adjustQuantity, cartEmpty, cartTotal, cartArr,updateCartArr} = useCartContext()
+  const { cartCount, removeItem, adjustQuantity, cartEmpty, cartTotal, cartArr,updateCartArr} = useCartContext()
 
   const ifCartEmpty = (cartEmpty) => {
     if(cartEmpty) {
@@ -36,6 +36,8 @@ function CartModal() {
     <button onClick={toggleModal} id="cart-button"><span className="material-symbols-outlined">
     shopping_cart
     </span></button>
+    <div className="count" onClick={toggleModal}><p >{cartCount}</p></div>
+   
     {isOpen &&  (
       <div className="cart-bg">
         <div className='cart-modal'>

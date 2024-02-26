@@ -83,7 +83,9 @@ button:focus-visible {
 //   }
 // }
 @media (max-width: 550px){
-
+  main{
+    margin-top: 2rem;
+  }
   .cards{
     display: flex;
     flex-direction: column;
@@ -99,6 +101,15 @@ button:focus-visible {
 }
 
 @media (max-width: 850px){
+  .hero-bg{
+    height: 500px;
+    width: 100vw;
+  }
+  .hero-bg img{
+    margin-top: 5rem;
+    height: 500px;
+    width: 100vw;
+  }
   nav{
   font-size: 0.8rem;
   }
@@ -118,7 +129,7 @@ button:focus-visible {
 
 
 @media (max-height: 850px){
-  
+
   .modal-container{
     display: flex;
     padding: 0 2rem;

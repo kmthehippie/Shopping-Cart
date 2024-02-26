@@ -6,7 +6,7 @@ import { CartContext } from './CartContext';
 function CartProvider({ children }) {
     const [cartArr, setCartArr] = useState([]);
     const [cartEmpty, setCartEmpty] = useState(true)
-
+    const [cartCount, setCartCount] = useState([])
     const [cartTotal, setCartTotal] = useState(0)
     
     const adjustQuantity = (itemId, amount) => {
@@ -28,6 +28,12 @@ function CartProvider({ children }) {
             total += (obj.price * obj.quantity)
         })
         setCartTotal(total)
+        let count = 0
+        cartArr.forEach(obj => {
+            count += obj.quantity
+        })
+        setCartCount(count)
+        console.log(cartArr.length)
         if (cartArr.length === 0){
             setCartEmpty(true)
         } else {
@@ -60,7 +66,7 @@ function CartProvider({ children }) {
  
   return (
     <div>
-        <CartContext.Provider value = {{ removeItem, adjustQuantity, cartEmpty, cartTotal, cartArr, updateCartArr }}>
+        <CartContext.Provider value = {{ cartCount, removeItem, adjustQuantity, cartEmpty, cartTotal, cartArr, updateCartArr }}>
         {children}
         </CartContext.Provider>
     </div>

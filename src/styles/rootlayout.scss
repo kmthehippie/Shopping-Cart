@@ -19,6 +19,7 @@ div{
 .navigation{
     display: flex;
     justify-content: center;
+
 }
 
 nav{
@@ -32,6 +33,9 @@ nav{
     z-index: 3;
     background-color: #242424;
     box-shadow: 0 0 5px 5px rgba(24,24,24,0.5)
+}
+nav h1{
+    margin: 1.25rem;
 }
 
 nav .head-logo{
@@ -60,6 +64,7 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 3rem;
 }
 main > :first-child{
     padding: 0;
